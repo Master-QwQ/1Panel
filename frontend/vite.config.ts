@@ -58,6 +58,7 @@ export default defineConfig(async ({ mode }: ConfigEnv): Promise<UserConfig> => 
     const reportPlugin = viteEnv.VITE_REPORT ? (await import('rollup-plugin-visualizer')).visualizer() : false;
 
     return {
+        base: viteEnv.VITE_BASE_PATH || '/',
         resolve: {
             preserveSymlinks: true,
             alias: {
